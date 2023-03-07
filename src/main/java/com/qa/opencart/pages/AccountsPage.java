@@ -25,6 +25,7 @@ public class AccountsPage {
 	private By logoutLink = By.linkText("Logout");
 	private By search = By.name("search");
 	private By searchBtn = By.cssSelector("div#search button");
+	private By myAccountHeader = By.cssSelector("div#content h2:nth-of-type(1)");
 	
 	
 	public String getAccPageTitle() {
@@ -53,6 +54,11 @@ public class AccountsPage {
 	
 	public boolean isSearchFieldExist() {
 		return eleUtil.doIsDisplayed(search);
+	}
+	
+	public void getMyAccountHeaderText() {
+		eleUtil.doPresenceOfElementLocated(accountSections, Constants.DEFAULT_TIME_OUT, 200);
+		
 	}
 	
 	public SearchResultsPage doSearch(String productName) {
